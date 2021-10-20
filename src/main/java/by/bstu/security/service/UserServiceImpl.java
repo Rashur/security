@@ -35,7 +35,7 @@ public class UserServiceImpl implements UserService {
     }
 
     public User findByLoginAndPassword(String login, String password) {
-        User user = userRepository.findByLogin(login);
+        User user = userRepository.findByLoginAndPassword(login, password);
         if(user != null) {
             if(bCryptPasswordEncoder.matches(password, user.getPassword())){
                 return user;
