@@ -1,4 +1,4 @@
-package by.bstu.security.config.jwt;
+package by.bstu.security.jwtSecurity.jwt;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
