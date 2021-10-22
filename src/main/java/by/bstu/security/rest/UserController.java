@@ -31,7 +31,7 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
-        userServiceImpl.saveUser(user);
+        userServiceImpl.register(user);
 
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
