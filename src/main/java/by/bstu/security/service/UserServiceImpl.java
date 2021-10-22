@@ -1,6 +1,5 @@
 package by.bstu.security.service;
 
-import by.bstu.security.model.Role;
 import by.bstu.security.model.User;
 import by.bstu.security.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +21,6 @@ public class UserServiceImpl implements UserService {
     }
 
     public User saveUser(User user) {
-        user.setRole(Role.ROLE_USER);
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         log.info("IN UserServiceImpl saveUser {}",user);
         return userRepository.save(user);
