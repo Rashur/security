@@ -7,6 +7,25 @@ import java.util.Collection;
 
 public class JwtUser implements UserDetails {
 
+    private final Long id;
+    private final String login;
+    private final String password;
+    private final Collection<? extends GrantedAuthority> authorities;
+
+    public JwtUser(Long id, String login, String password, Collection<? extends GrantedAuthority> authorities) {
+        this.id = id;
+        this.login = login;
+        this.password = password;
+        this.authorities = authorities;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getLogin() {
+        return login;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

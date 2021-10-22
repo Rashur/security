@@ -1,5 +1,7 @@
 package by.bstu.security.jwtSecurity;
 
+import by.bstu.security.jwtSecurity.jwt.JwtUser;
+import by.bstu.security.jwtSecurity.jwt.JwtUserFactory;
 import by.bstu.security.model.User;
 import by.bstu.security.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -26,7 +28,8 @@ public class JwtUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("User with login " + username + " not found");
         }
 
-        //TODO create jwt user
-        return null;
+        JwtUser jwtUser = JwtUserFactory.create(user);
+        log.info("IN loadUserByUsername - user with username: {} successfully loaded", username);
+        return jwtUser;
     }
 }
